@@ -10,6 +10,9 @@ public class BouncerLogic : MonoBehaviour
 	public Collision2D collN;
 	public ForceMode2D thrust;
 	public float force;
+	public float countDown = 1.1f;
+	public float downTime, upTime, pressTime = 0;
+	public bool ready = false;
 	Vector2 dir;
 
 
@@ -24,7 +27,7 @@ public class BouncerLogic : MonoBehaviour
 	{
 		if (collN.gameObject.tag == "Circular Bumper") 
 		{
-			force = 5;
+			force = 4;
 			float x1 = collN.contacts [0].point.x;
 			float y1 = collN.contacts[0].point.y;
 			float x2 = transform.position.x;
@@ -37,11 +40,13 @@ public class BouncerLogic : MonoBehaviour
 
 		/*else if (collN.gameObject.tag == "LaunchSpring") 
 		{
-			if()
+			if(Input.GetKey(KeyCode.Space))
 			{
-				
+				if()
 			}
 		}*/
 	}
+
+
 
 }
