@@ -759,6 +759,11 @@ MonoBehaviour:
   rb: {fileID: 830851122}
   thrust: 1
   force: 0
+  countDown: 1.1
+  downTime: 0
+  upTime: 0
+  pressTime: 0
+  ready: 0
 --- !u!1 &952804329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1098,7 @@ GameObject:
   - component: {fileID: 1839529047}
   - component: {fileID: 1839529046}
   - component: {fileID: 1839529045}
+  - component: {fileID: 1839529050}
   m_Layer: 0
   m_Name: launchSpringKinetic
   m_TagString: LaunchSpring
@@ -1116,9 +1122,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 1.53
+  m_Distance: 2.14
   m_DampingRatio: 0
-  m_Frequency: 9.26
+  m_Frequency: 5.22
 --- !u!50 &1839529046
 Rigidbody2D:
   serializedVersion: 4
@@ -1201,6 +1207,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839529050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1839529044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f01761499cc8e4dbb1df742993e33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  countDown: 1.1
+  gre: {fileID: 0}
 --- !u!1 &1875314125
 GameObject:
   m_ObjectHideFlags: 0

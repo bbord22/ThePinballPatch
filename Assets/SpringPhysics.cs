@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SpringPhysics : MonoBehaviour {
 
-	public float upTime, downTime, pressTime = 0;
+	public float timer = 0;
 	public float countDown = 1.1f;
-	public bool ready = false;
 	public SpriteRenderer gre;
 
 	
@@ -14,21 +13,14 @@ public class SpringPhysics : MonoBehaviour {
 		gre = gameObject.GetComponent<SpriteRenderer> ();
 	}
 	
-	public void update()
+	void update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && ready == false)
+		if(Input.GetKey(KeyCode.Space))
 		{
-			downTime = Time.time;
-			pressTime = downTime + countDown;
-			ready = true;
+			timer += Time.deltaTime;
 		}
 
-		if(Input.GetKeyUp(KeyCode.Space))
-		{
-			upTime = Time.time;
-		}
-
-		if(upTime >= pressTime && ready == true)
+		if(timer > countDown)
 		{
 			gre.color = Color.green;
 		}
