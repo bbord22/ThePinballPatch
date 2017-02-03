@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class circleBumperForce : MonoBehaviour
+public class BouncerLogic : MonoBehaviour
 {
 
 	public Rigidbody2D rb;
@@ -14,8 +14,6 @@ public class circleBumperForce : MonoBehaviour
 
 	public void start()
 	{
-		rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-
 		rb = GetComponent<Rigidbody2D> ();
 		thrust = ForceMode2D.Impulse;
 		collN = GetComponent<Collision2D> ();
@@ -27,9 +25,14 @@ public class circleBumperForce : MonoBehaviour
 		if (collN.gameObject.tag == "Circular Bumper") 
 		{
 			force.x = 0;
-			force.y = 3;
+			force.y = 5;
 			rb.AddRelativeForce (force, thrust);
 		}
+
+		/*else if (collN.gameObject.tag == "LaunchSpring") 
+		{
+			
+		}*/
 	}
-		
+
 }
