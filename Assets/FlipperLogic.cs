@@ -2,20 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlipperLogic : MonoBehaviour 
-{
+public class FlipperLogic : MonoBehaviour {
 	public HingeJoint2D hinge;
-	public float reference;
+	public JointMotor2D motor;
 
 	void Start () 
 	{
-		hinge = gameObject.GetComponent<HingeJoint2D> ();
-		reference = 213.02f;
-		hinge.referenceAngle = 213.02;
+		hinge = GetComponent<HingeJoint2D> ();
+		motor = hinge.motor;
+
 	}
 	
-
-	void Update () {
-		
+	// Update is called once per frame
+	void Update () 
+	{
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			motor.motorSpeed = 1400;
+		} 
+		else 
+		{
+			motor.motorSpeed = -500;
+		}
+		hinge.motor = motor;
 	}
 }

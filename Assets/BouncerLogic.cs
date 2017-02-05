@@ -9,7 +9,6 @@ public class BouncerLogic : MonoBehaviour
 
 	//bumper variables
 	public Rigidbody2D rb;
-	public Collision2D collN;
 	public ForceMode2D thrust;
 	public float force;
 	public Vector2 dir;
@@ -19,7 +18,6 @@ public class BouncerLogic : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		thrust = ForceMode2D.Impulse;
-		collN = GetComponent<Collision2D> ();
 	}
 
 	public void OnCollisionEnter2D(Collision2D collN)
@@ -29,7 +27,7 @@ public class BouncerLogic : MonoBehaviour
 			force = 10;
 			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
-			dir = -dir.normalized;
+			dir = dir.normalized;
 			rb.AddRelativeForce (dir*force, thrust);
 		}
 
@@ -38,10 +36,9 @@ public class BouncerLogic : MonoBehaviour
 			force = 10;
 			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
-			dir = -dir.normalized;
+			dir = dir.normalized;
 			rb.AddRelativeForce (dir*force, thrust);
 		}
 	}
-		
-		
+
 }
