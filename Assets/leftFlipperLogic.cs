@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlipperLogic : MonoBehaviour {
+public class leftFlipperLogic : MonoBehaviour {
 	public HingeJoint2D hinge;
 	public JointMotor2D motor;
 
@@ -12,16 +12,16 @@ public class FlipperLogic : MonoBehaviour {
 		motor = hinge.motor;
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			motor.motorSpeed = 750;
+		if (Input.GetKey (KeyCode.LeftArrow)) {
+			motor.motorSpeed = -750;
 		} 
 		else 
 		{
-			motor.motorSpeed = -500;
+			motor.motorSpeed = 500;
 		}
 		hinge.motor = motor;
 	}

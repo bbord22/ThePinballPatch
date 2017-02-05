@@ -8,6 +8,7 @@ TagManager:
   - WallBumper
   - CircularBumper
   - Flipper
+  - SideCircularBumper
   layers:
   - Default
   - TransparentFX
