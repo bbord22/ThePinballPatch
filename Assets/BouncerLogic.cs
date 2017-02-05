@@ -24,7 +24,7 @@ public class BouncerLogic : MonoBehaviour
 	{
 		if (collN.gameObject.tag == "CircularBumper") 
 		{
-			force = 17;
+			force = 8;
 			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
@@ -33,7 +33,7 @@ public class BouncerLogic : MonoBehaviour
 
 		if (collN.gameObject.tag == "WallBumper") 
 		{
-			force = 17;
+			force = 8;
 			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
@@ -42,7 +42,7 @@ public class BouncerLogic : MonoBehaviour
 
 		if (collN.gameObject.tag == "SideCircularBumper") 
 		{
-			force = 20;
+			force = 16;
 			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
