@@ -6,15 +6,14 @@ using UnityEngine;
 public class BouncerLogic : MonoBehaviour
 {
 
+
+	//bumper variables
 	public Rigidbody2D rb;
 	public Collision2D collN;
 	public ForceMode2D thrust;
 	public float force;
-	public float countDown = 1.1f;
-	public float downTime, upTime, pressTime = 0;
-	public bool ready = false;
-	Vector2 dir;
-
+	public Vector2 dir;
+	public float x1, x2, y1, y2;
 
 	public void start()
 	{
@@ -25,28 +24,24 @@ public class BouncerLogic : MonoBehaviour
 
 	public void OnCollisionEnter2D(Collision2D collN)
 	{
-		if (collN.gameObject.tag == "Circular Bumper") 
+		if (collN.gameObject.tag == "CircularBumper") 
 		{
-			force = 4;
-			float x1 = collN.contacts [0].point.x;
-			float y1 = collN.contacts[0].point.y;
-			float x2 = transform.position.x;
-			float y2 = transform.position.y;
-			dir.x = x1 - x2;
-			dir.y = y1 - y2;
+			force = 10;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = -dir.normalized;
 			rb.AddRelativeForce (dir*force, thrust);
 		}
 
-		/*else if (collN.gameObject.tag == "LaunchSpring") 
+		if (collN.gameObject.tag == "WallBumper") 
 		{
-			if(Input.GetKey(KeyCode.Space))
-			{
-				if()
-			}
-		}*/
+			force = 10;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+			dir = -dir.normalized;
+			rb.AddRelativeForce (dir*force, thrust);
+		}
 	}
-
-
-
+		
+		
 }

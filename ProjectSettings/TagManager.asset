@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Circular Bumper
   - LaunchSpring
+  - WallBumper
+  - CircularBumper
   layers:
   - Default
   - TransparentFX
