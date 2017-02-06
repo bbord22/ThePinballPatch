@@ -9,6 +9,7 @@ TagManager:
   - CircularBumper
   - Flipper
   - SideCircularBumper
+  - bottomleftbumper
   layers:
   - Default
   - TransparentFX

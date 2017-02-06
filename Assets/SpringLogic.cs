@@ -41,27 +41,27 @@ public class SpringLogic : MonoBehaviour {
 
 				if (upTime < strength2) 
 				{
-					force = 10;
+					force = 11;
 					rb.AddForce (dir*force, thrust);
 				} 
 				else if (strength2 < upTime && upTime < strength3) 
 				{
-					force = 14;
+					force = 15;
 					rb.AddForce (dir*force, thrust);
 				}
 				else if (strength3 < upTime && upTime < strength4) 
 				{
-					force = 18;
+					force = 19;
 					rb.AddForce (dir*force, thrust);
 				}
 				else if (strength4 < upTime && upTime < strength5) 
 				{
-					force = 23;
+					force = 24;
 					rb.AddForce (dir*force, thrust);
 				}
 				else 
 				{
-					force = 30;
+					force = 31;
 					rb.AddForce (dir*force, thrust);
 				} 
 			}
