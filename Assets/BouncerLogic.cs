@@ -41,20 +41,11 @@ public class BouncerLogic : MonoBehaviour
 			rend.sprite = largebumperalternate;
 		}
 
-		else if (collN.gameObject.name == "bottomleftbumper") 
+		else if (collN.gameObject.name == "bottomleftbumper" ) 
 		{
 			bottomleftbumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/bottomleftbumperalternate");
 			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
 			rend.sprite = bottomleftbumperalternate;
-
-			if (collN.gameObject.tag == "WallBumper") 
-			{
-				force = 8;
-				dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
-				dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
-				dir = dir.normalized;
-				rb.AddRelativeForce (dir * force, thrust);
-			}
 		}
 
 
@@ -64,15 +55,15 @@ public class BouncerLogic : MonoBehaviour
 			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
 			rend.sprite = bottomrightbumperalternate;
 			rend.flipX = true;
+		}
 
-			if (collN.gameObject.tag == "WallBumper") 
-			{
-				force = 8;
-				dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
-				dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
-				dir = dir.normalized;
-				rb.AddRelativeForce (dir * force, thrust);
-			}
+		else if (collN.gameObject.tag == "WallBumper") 
+		{
+			force = 8;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+			dir = dir.normalized;
+			rb.AddRelativeForce (dir * force, thrust);
 		}
 
 		else if (collN.gameObject.tag == "SideCircularBumper") 

@@ -12,6 +12,8 @@ TagManager:
   - bottomleftbumper
   - bottomrightbumper
   - peaball
+  - wallbumper1
+  - wallbumper2
   layers:
   - Default
   - TransparentFX
