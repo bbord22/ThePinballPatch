@@ -18,6 +18,7 @@ public class BouncerLogic : MonoBehaviour
 	public Vector2 dir;
 	public float force;
 	public float x1, x2, y1, y2;
+	public AudioSource soundEffect;
 
 	public void start()
 	{
@@ -34,29 +35,15 @@ public class BouncerLogic : MonoBehaviour
 			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
-			rb.AddRelativeForce (dir*force, thrust);
+			rb.AddRelativeForce (dir * force, thrust);
 
-			largebumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/largebumperalternate");
+			largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/largebumperalternate");
 			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
 			rend.sprite = largebumperalternate;
-		}
 
-		else if (collN.gameObject.name == "bottomleftbumper" ) 
-		{
-			bottomleftbumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/bottomleftbumperalternate");
-			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
-			rend.sprite = bottomleftbumperalternate;
-		}
-
-
-		else if (collN.gameObject.name == "bottomrightbumper") 
-		{
-			bottomrightbumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/bottomrightbumperalternate");
-			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
-			rend.sprite = bottomrightbumperalternate;
-			rend.flipX = true;
-		}
-
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
+		} 
 		else if (collN.gameObject.tag == "WallBumper") 
 		{
 			force = 8;
@@ -64,11 +51,55 @@ public class BouncerLogic : MonoBehaviour
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
 			rb.AddRelativeForce (dir * force, thrust);
+		} 
+		else if (collN.gameObject.tag == "sheepbumper") 
+		{
+			force = 8;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+			dir = dir.normalized;
+			rb.AddRelativeForce (dir * force, thrust);
+
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
+			soundEffect = GameObject.Find ("largebumperright").GetComponent<AudioSource> ();
+			soundEffect.Play ();
+		} 
+		else if (collN.gameObject.tag == "wallbumper1") 
+		{
+			force = 12;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+			dir = dir.normalized;
+			rb.AddRelativeForce (dir * force, thrust);
+
+			bottomleftbumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/bottomleftbumperalternate");
+			rend = GameObject.Find ("bottomleftbumper").GetComponent<SpriteRenderer> ();
+			rend.sprite = bottomleftbumperalternate;
+
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
+		} 
+		else if (collN.gameObject.tag == "wallbumper2") 
+		{
+			force = 12;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+			dir = dir.normalized;
+			rb.AddRelativeForce (dir * force, thrust);
+
+			bottomrightbumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/bottomrightbumperalternate");
+			rend = GameObject.Find("bottomrightbumper").GetComponent<SpriteRenderer> ();
+			rend.sprite = bottomrightbumperalternate;
+			rend.flipX = true;
+
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
 		}
 
 		else if (collN.gameObject.tag == "SideCircularBumper") 
 		{
-			force = 11;
+			force = 8;
 			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
@@ -77,6 +108,9 @@ public class BouncerLogic : MonoBehaviour
 			sidebumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/sidebumperalternate");
 			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
 			rend.sprite = sidebumperalternate;
+
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
 		}
 	}
 
