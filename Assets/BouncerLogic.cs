@@ -18,7 +18,6 @@ public class BouncerLogic : MonoBehaviour
 	public Vector2 dir;
 	public float force;
 	public float x1, x2, y1, y2;
-	public int ballNumber = 1;
 
 	public void start()
 	{
@@ -42,27 +41,37 @@ public class BouncerLogic : MonoBehaviour
 			rend.sprite = largebumperalternate;
 		}
 
-		else if (collN.gameObject.tag == "WallBumper") 
+		else if (collN.gameObject.name == "bottomleftbumper") 
 		{
-			force = 8;
-			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
-			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
-			dir = dir.normalized;
-			rb.AddRelativeForce (dir*force, thrust);
+			bottomleftbumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/bottomleftbumperalternate");
+			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
+			rend.sprite = bottomleftbumperalternate;
 
-			if (collN.gameObject.name == "bottomleftbumper") 
+			if (collN.gameObject.tag == "WallBumper") 
 			{
-				bottomleftbumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/bottomleftbumperalternate");
-				rend = collN.gameObject.GetComponent<SpriteRenderer> ();
-				rend.sprite = bottomleftbumperalternate;
+				force = 8;
+				dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+				dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+				dir = dir.normalized;
+				rb.AddRelativeForce (dir * force, thrust);
 			}
+		}
 
-			else if (collN.gameObject.name == "bottomrightbumper") 
+
+		else if (collN.gameObject.name == "bottomrightbumper") 
+		{
+			bottomrightbumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/bottomrightbumperalternate");
+			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
+			rend.sprite = bottomrightbumperalternate;
+			rend.flipX = true;
+
+			if (collN.gameObject.tag == "WallBumper") 
 			{
-				bottomrightbumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/bottomrightbumperalternate");
-				rend = collN.gameObject.GetComponent<SpriteRenderer> ();
-				rend.sprite = bottomrightbumperalternate;
-				rend.flipX = true;
+				force = 8;
+				dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+				dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+				dir = dir.normalized;
+				rb.AddRelativeForce (dir * force, thrust);
 			}
 		}
 

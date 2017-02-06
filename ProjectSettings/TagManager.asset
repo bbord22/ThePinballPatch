@@ -10,6 +10,8 @@ TagManager:
   - Flipper
   - SideCircularBumper
   - bottomleftbumper
+  - bottomrightbumper
+  - peaball
   layers:
   - Default
   - TransparentFX
