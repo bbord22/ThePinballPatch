@@ -96,9 +96,5 @@ public class animationLogic : MonoBehaviour {
 			} 
 		}
 
-		//if (gameObject.tag == "LaunchSpring") 
-		//{
-			
-		//}
 	}
 }
