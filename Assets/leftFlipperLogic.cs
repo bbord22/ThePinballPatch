@@ -5,6 +5,7 @@ using UnityEngine;
 public class leftFlipperLogic : MonoBehaviour {
 	public HingeJoint2D hinge;
 	public JointMotor2D motor;
+	public AudioSource soundEffect;
 
 	void Start () 
 	{
@@ -16,6 +17,12 @@ public class leftFlipperLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) 
+		{
+			soundEffect = gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
+		}
+
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			motor.motorSpeed = -750;
 		} 

@@ -26,7 +26,6 @@ public class BouncerLogic : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		thrust = ForceMode2D.Impulse;
-		scale = .7f;
 	}
 
 	public void OnCollisionEnter2D(Collision2D collN)
@@ -84,6 +83,9 @@ public class BouncerLogic : MonoBehaviour
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
 			rb.AddRelativeForce (dir * force, thrust);
+
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
 		} 
 		else if (collN.gameObject.tag == "sheepbumper") 
 		{
@@ -97,7 +99,6 @@ public class BouncerLogic : MonoBehaviour
 			rend = GameObject.FindGameObjectWithTag("lefthorizontalpost").GetComponent<SpriteRenderer> ();
 			rend.sprite = sheepbumperalternate;
 			rend.flipX = true;
-			//transform.localScale = new Vector3(scale, scale, scale);
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();

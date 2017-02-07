@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlipperLogic : MonoBehaviour {
 	public HingeJoint2D hinge;
 	public JointMotor2D motor;
+	public AudioSource soundEffect;
 
 	void Start () 
 	{
@@ -16,7 +17,14 @@ public class FlipperLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (Input.GetKeyDown (KeyCode.RightArrow)) 
+		{
+			soundEffect = gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
+		}
+
+		if (Input.GetKey (KeyCode.RightArrow)) 
+		{
 			motor.motorSpeed = 750;
 		} 
 		else 
