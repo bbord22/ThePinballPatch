@@ -18,8 +18,46 @@ public class animationLogic : MonoBehaviour {
 	{
 		if (gameObject.tag == "CircularBumper") 
 		{
-			Sprite largebumper = Resources.Load <UnityEngine.Sprite> ("SpriteArt/largebumper");
-			Sprite largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/largebumperalternate");
+			Sprite largebumper = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomato2");
+			Sprite largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomatoalt2.1");
+			limit = .1f;
+
+			if (GetComponent<SpriteRenderer> ().sprite == largebumperalternate) {
+				if (ready == false) {
+					startTime = Time.time;
+					ready = true;
+				}
+
+				if (Time.time - limit > startTime) {
+					GetComponent<SpriteRenderer> ().sprite = largebumper;
+					ready = false;
+				}
+			} 
+		}
+
+		if (gameObject.tag == "CircularBumper2") 
+		{
+			Sprite largebumper = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomato2");
+			Sprite largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomatoalt2.2");
+			limit = .1f;
+
+			if (GetComponent<SpriteRenderer> ().sprite == largebumperalternate) {
+				if (ready == false) {
+					startTime = Time.time;
+					ready = true;
+				}
+
+				if (Time.time - limit > startTime) {
+					GetComponent<SpriteRenderer> ().sprite = largebumper;
+					ready = false;
+				}
+			} 
+		}
+
+		if (gameObject.tag == "CircularBumper3") 
+		{
+			Sprite largebumper = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomato2");
+			Sprite largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomatoalt2.3");
 			limit = .1f;
 
 			if (GetComponent<SpriteRenderer> ().sprite == largebumperalternate) {
@@ -76,8 +114,8 @@ public class animationLogic : MonoBehaviour {
 
 		if (gameObject.tag == "SideCircularBumper") 
 		{
-			Sprite sidebumper = Resources.Load <UnityEngine.Sprite> ("SpriteArt/sidebumper");
-			Sprite sidebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/sidebumperalternate");
+			Sprite sidebumper = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/bellpepper2");
+			Sprite sidebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/bellpepper2alt");
 			limit = .1f;
 
 			if (GetComponent<SpriteRenderer> ().sprite == sidebumperalternate) 
@@ -93,8 +131,27 @@ public class animationLogic : MonoBehaviour {
 					GetComponent<SpriteRenderer> ().sprite = sidebumper;
 					ready = false;
 				}
-			} 
+			}
 		}
 
+		if (gameObject.tag == "lefthorizontalpost") 
+		{
+			Sprite sheepbumper = Resources.Load <UnityEngine.Sprite> ("SpriteArt/verticalpost");
+			Sprite sheepbumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/cucumberalt2");
+			limit = .1f;
+
+			if (GetComponent<SpriteRenderer> ().sprite == sheepbumperalternate) {
+				if (ready == false) 
+				{
+					startTime = Time.time;
+					ready = true;
+				}
+
+				if (Time.time - limit > startTime) {
+					GetComponent<SpriteRenderer> ().sprite = sheepbumper;
+					ready = false;
+				}
+			} 
+		}
 	}
 }

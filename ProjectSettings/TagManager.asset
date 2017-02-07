@@ -15,6 +15,9 @@ TagManager:
   - wallbumper1
   - wallbumper2
   - sheepbumper
+  - CircularBumper2
+  - CircularBumper3
+  - lefthorizontalpost
   layers:
   - Default
   - TransparentFX

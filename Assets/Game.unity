@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 116928770}
   m_Layer: 0
   m_Name: largebumpermiddle
-  m_TagString: CircularBumper
+  m_TagString: CircularBumper2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0637717493d2124590d872228f18b79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2acf8aff7bd7e044a8347c9c01dc184d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -807,7 +807,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a44b27c9feddc3346a1df78cb4e1d1b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 837cd1e08e8a61f4eab30c85c47e6b58, type: 3}
   m_Color: {r: 1, g: 0.6413793, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -968,7 +968,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a44b27c9feddc3346a1df78cb4e1d1b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 837cd1e08e8a61f4eab30c85c47e6b58, type: 3}
   m_Color: {r: 0.7941176, g: 0.57505065, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1138,9 +1138,9 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 2.620627, y: 1.5115278}
+  m_Anchor: {x: 0.4122363, y: -0.08440078}
   m_ConnectedAnchor: {x: -1.0219264, y: -3.7762442}
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 1000000
@@ -1199,7 +1199,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1544b403daa6dda4580f655f1a18ba87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13650e9301ff866449f562a41f5f3b6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1210,7 +1210,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826942834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.0345297, y: -10.07, z: -1}
+  m_LocalPosition: {x: 4.97, y: -8.6, z: -1}
   m_LocalScale: {x: -0.9073371, y: 0.9678262, z: 0.9073371}
   m_Children: []
   m_Father: {fileID: 1152357711}
@@ -1227,7 +1227,7 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -2.21, y: -1.61}
   m_Points:
     m_Paths:
     - - {x: -2.225, y: -2.455}
@@ -1391,7 +1391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 830851121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.22, y: -2.31, z: -1}
+  m_LocalPosition: {x: -1.75, y: 4.46, z: -1}
   m_LocalScale: {x: 0.045021143, y: 0.045021143, z: 0.12863185}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1415,8 +1415,10 @@ MonoBehaviour:
   bottomleftbumperalternate: {fileID: 0}
   bottomrightbumperalternate: {fileID: 0}
   sidebumperalternate: {fileID: 0}
+  sheepbumperalternate: {fileID: 0}
   dir: {x: 0, y: 0}
   force: 0
+  scale: 0
   x1: 0
   x2: 0
   y1: 0
@@ -1491,7 +1493,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e7af7699e5fd2c44bbe18ca96b6b765, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a406eb8359a4f4f4f882182200653dfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1854,8 +1856,10 @@ MonoBehaviour:
   bottomleftbumperalternate: {fileID: 0}
   bottomrightbumperalternate: {fileID: 0}
   sidebumperalternate: {fileID: 0}
+  sheepbumperalternate: {fileID: 0}
   dir: {x: 0, y: 0}
   force: 0
+  scale: 0
   x1: 0
   x2: 0
   y1: 0
@@ -2517,7 +2521,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a44b27c9feddc3346a1df78cb4e1d1b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 837cd1e08e8a61f4eab30c85c47e6b58, type: 3}
   m_Color: {r: 1, g: 0.76551723, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2809,7 +2813,7 @@ GameObject:
   - component: {fileID: 1252487759}
   m_Layer: 0
   m_Name: largebumperright
-  m_TagString: CircularBumper
+  m_TagString: CircularBumper3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2859,7 +2863,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0637717493d2124590d872228f18b79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2acf8aff7bd7e044a8347c9c01dc184d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2869,13 +2873,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252487754}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.8708709, w: 0.49151185}
   m_LocalPosition: {x: 1.52, y: 2.21, z: -1}
   m_LocalScale: {x: 0.12353824, y: 0.123538256, z: 0.123538256}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -121.12}
 --- !u!114 &1252487758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3034,7 +3038,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0637717493d2124590d872228f18b79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2acf8aff7bd7e044a8347c9c01dc184d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3044,13 +3048,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1311315606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38614744, w: 0.9224371}
   m_LocalPosition: {x: -0.06, y: 2.96, z: -1}
   m_LocalScale: {x: 0.10694532, y: 0.10694531, z: 0.10694531}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.43}
 --- !u!114 &1311315610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3853,7 +3857,7 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 2.6206272, y: 1.5516162}
+  m_Anchor: {x: 0.3968092, y: -0.1019932}
   m_ConnectedAnchor: {x: 1.0468487, y: -3.777223}
   m_UseMotor: 0
   m_Motor:
@@ -3914,7 +3918,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1544b403daa6dda4580f655f1a18ba87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13650e9301ff866449f562a41f5f3b6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3925,7 +3929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853705925}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.97, y: -10.07, z: -1}
+  m_LocalPosition: {x: -4.95, y: -8.52, z: -1}
   m_LocalScale: {x: 0.9073371, y: 0.96782625, z: 0.9073371}
   m_Children: []
   m_Father: {fileID: 1364266018}
@@ -3954,7 +3958,7 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -2.2, y: -1.58}
   m_Points:
     m_Paths:
     - - {x: -2.225, y: -2.455}
@@ -4391,9 +4395,10 @@ GameObject:
   - component: {fileID: 2032479146}
   - component: {fileID: 2032479145}
   - component: {fileID: 2032479144}
+  - component: {fileID: 2032479147}
   m_Layer: 0
   m_Name: lefthorizontalpost
-  m_TagString: Untagged
+  m_TagString: lefthorizontalpost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4487,6 +4492,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 109.310005}
+--- !u!114 &2032479147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032479143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45ee8e17bd6a564ca26a780e8e6adec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 0
+  limit: 0
+  ready: 0
 --- !u!1 &2058354289
 GameObject:
   m_ObjectHideFlags: 0

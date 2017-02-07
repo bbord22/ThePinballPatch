@@ -15,8 +15,10 @@ public class BouncerLogic : MonoBehaviour
 	public Sprite bottomleftbumperalternate;
 	public Sprite bottomrightbumperalternate;
 	public Sprite sidebumperalternate;
+	public Sprite sheepbumperalternate;
 	public Vector2 dir;
 	public float force;
+	public float scale;
 	public float x1, x2, y1, y2;
 	public AudioSource soundEffect;
 
@@ -24,6 +26,7 @@ public class BouncerLogic : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		thrust = ForceMode2D.Impulse;
+		scale = .7f;
 	}
 
 	public void OnCollisionEnter2D(Collision2D collN)
@@ -37,7 +40,37 @@ public class BouncerLogic : MonoBehaviour
 			dir = dir.normalized;
 			rb.AddRelativeForce (dir * force, thrust);
 
-			largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/largebumperalternate");
+			largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomatoalt2.1");
+			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
+			rend.sprite = largebumperalternate;
+
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
+		} 
+		else if (collN.gameObject.tag == "CircularBumper2") 
+		{
+			force = 6;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+			dir = dir.normalized;
+			rb.AddRelativeForce (dir * force, thrust);
+
+			largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomatoalt2.2");
+			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
+			rend.sprite = largebumperalternate;
+
+			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
+			soundEffect.Play ();
+		} 
+		else if (collN.gameObject.tag == "CircularBumper3") 
+		{
+			force = 6;
+			dir.x = collN.contacts [0].point.x - collN.gameObject.transform.position.x;
+			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
+			dir = dir.normalized;
+			rb.AddRelativeForce (dir * force, thrust);
+
+			largebumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/tomatoalt2.3");
 			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
 			rend.sprite = largebumperalternate;
 
@@ -59,6 +92,12 @@ public class BouncerLogic : MonoBehaviour
 			dir.y = collN.contacts [0].point.y - collN.gameObject.transform.position.y;
 			dir = dir.normalized;
 			rb.AddRelativeForce (dir * force, thrust);
+
+			sheepbumperalternate = Resources.Load <UnityEngine.Sprite> ("SpriteArt/finalart/cucumberalt2");
+			rend = GameObject.FindGameObjectWithTag("lefthorizontalpost").GetComponent<SpriteRenderer> ();
+			rend.sprite = sheepbumperalternate;
+			rend.flipX = true;
+			//transform.localScale = new Vector3(scale, scale, scale);
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
@@ -105,7 +144,7 @@ public class BouncerLogic : MonoBehaviour
 			dir = dir.normalized;
 			rb.AddRelativeForce (dir*force, thrust);
 
-			sidebumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/sidebumperalternate");
+			sidebumperalternate = Resources.Load <UnityEngine.Sprite>("SpriteArt/finalart/bellpepper2alt");
 			rend = collN.gameObject.GetComponent<SpriteRenderer> ();
 			rend.sprite = sidebumperalternate;
 
