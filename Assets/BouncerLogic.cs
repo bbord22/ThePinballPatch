@@ -19,6 +19,7 @@ public class BouncerLogic : MonoBehaviour
 	public Vector2 dir;
 	public float force;
 	public float scale;
+	public int currentScore = 0;
 	public float x1, x2, y1, y2;
 	public AudioSource soundEffect;
 
@@ -45,6 +46,8 @@ public class BouncerLogic : MonoBehaviour
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 20;
 		} 
 		else if (collN.gameObject.tag == "CircularBumper2") 
 		{
@@ -60,6 +63,8 @@ public class BouncerLogic : MonoBehaviour
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 20;
 		} 
 		else if (collN.gameObject.tag == "CircularBumper3") 
 		{
@@ -75,6 +80,8 @@ public class BouncerLogic : MonoBehaviour
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 20;
 		} 
 		else if (collN.gameObject.tag == "WallBumper") 
 		{
@@ -86,6 +93,8 @@ public class BouncerLogic : MonoBehaviour
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 40;
 		} 
 		else if (collN.gameObject.tag == "sheepbumper") 
 		{
@@ -104,6 +113,8 @@ public class BouncerLogic : MonoBehaviour
 			soundEffect.Play ();
 			soundEffect = GameObject.Find ("largebumperright").GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 40;
 		} 
 		else if (collN.gameObject.tag == "wallbumper1") 
 		{
@@ -119,6 +130,8 @@ public class BouncerLogic : MonoBehaviour
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 10;
 		} 
 		else if (collN.gameObject.tag == "wallbumper2") 
 		{
@@ -135,6 +148,8 @@ public class BouncerLogic : MonoBehaviour
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 10;
 		}
 
 		else if (collN.gameObject.tag == "SideCircularBumper") 
@@ -151,6 +166,8 @@ public class BouncerLogic : MonoBehaviour
 
 			soundEffect = collN.gameObject.GetComponent<AudioSource> ();
 			soundEffect.Play ();
+
+			currentScore += 30;
 		}
 	}
 
